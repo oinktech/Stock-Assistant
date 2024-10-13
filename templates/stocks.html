@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>所有股票記錄</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>所有股票記錄</h1>
+        <input type="text" id="search" placeholder="搜尋股票代碼..." oninput="filterStocks()">
+        <table>
+            <tr>
+                <th>股票代碼</th>
+                <th>收盤價</th>
+                <th>成交量</th>
+                <th>日期</th>
+            </tr>
+            {% for record in records %}
+            <tr>
+                <td><a href="{{ url_for('stock', symbol=record.symbol) }}">{{ record.symbol }}</a></td>
+                <td>{{ record.close }}</td>
+                <td>{{ record.volume }}</td>
+                <td>{{ record.date }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/">返回主頁</a>
+    </div>
+
+    <script>
+        function filterStocks() {
+            const searchValue = document.getElementById('search').value.toLowerCase();
+            const rows = document.querySelectorAll('table tr:not(:first-child)');
+            rows.forEach(row => {
+                const cell = row.querySelector('td:first-child');
+                if (cell.textContent.toLowerCase().includes(searchValue)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

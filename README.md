@@ -1,6 +1,6 @@
 # 股票助手 (Stock Helper)
 
-![Logo](https://openmoji.org/data/color/svg/1F4B1.svg){: style="width: 50px; height: 50px;" }
+![Logo](https://openmoji.org/data/color/svg/1F4B1.svg)
 
 ## 語言選擇 / Language Selection
 - [繁體中文](#繁體中文)

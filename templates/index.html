@@ -3,20 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>股市助手</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>股票查詢</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            animation: fadeIn 0.5s;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        form:hover {
+            transform: scale(1.02);
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .language-selector {
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>股市助手</h1>
-        <div>
-            <a href="/stocks">查看所有股票</a>
-            <a href="/stock/AAPL">查詢蘋果股票</a>
-        </div>
-        <div class="language-selector">
-            <a href="/?lang=zh" class="flag"><img src="https://openmoji.org/data/color/svg/1F1F9-1F1FC.svg" alt="中文"/> 繁體中文</a>
-            <a href="/?lang=en" class="flag"><img src="https://openmoji.org/data/color/svg/1F1FA-1F1F8.svg" alt="英文"/> English</a>
-        </div>
-    </div>
+    <h1>股票查詢</h1>
+    
+    <form action="/search" method="POST">
+        <label for="symbol">股票代碼：</label>
+        <input type="text" id="symbol" name="symbol" required>
+        <button type="submit"><i class="fas fa-search"></i> 查詢</button>
+    </form>
+    <a href="/stocks"><button><i class="fas fa-list"></i> 查看所有股票記錄</button></a>
 </body>
 </html>

@@ -1,63 +1,46 @@
+# 股票助手 (Stock Helper)
 
-# 股票助手 (Stock Assistant)
-
-[![Flask](https://img.shields.io/badge/Flask-v2.2.2-blue.svg)](https://flask.palletsprojects.com/)
-[![Python](https://img.shields.io/badge/Python-v3.8%2B-blue.svg)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
----
+![Logo](https://openmoji.org/data/color/svg/1F4B1.svg)
 
 ## 語言選擇 / Language Selection
-
-<div style="text-align:center;">
-    <a href="#功能"><img src="https://openmoji.org/data/color/svg/1F1F9-1F1FC.svg" alt="繁體中文" width="40" /></a>
-    <a href="#features"><img src="https://openmoji.org/data/color/svg/1F1FA-1F1F8.svg" alt="English" width="40" /></a>
-</div>
+- [繁體中文](#繁體中文)
+- [English](#english)
 
 ---
 
-## 內容 / Table of Contents
+## 繁體中文
 
-- [功能](#功能)
-- [安裝](#安裝)
-- [使用](#使用)
-- [示範](#示範)
-- [貢獻](#貢獻)
-- [許可證](#許可證)
+### 介紹
 
----
+**股票助手** 是一個功能強大的股市查詢應用，利用 Flask 框架提供即時的股票數據和分析。無論你是專業投資者還是股市新手，這個應用都能幫助你更好地了解市場動態。
 
-## 功能 / Features
+### 主要功能
 
-- 查看所有股票數據 / View all stock data
-- 查詢特定股票的詳情 / Query details of a specific stock
-- 搜索股票功能 / Search stocks functionality
-- 多語言支持（繁體中文和英文）/ Multi-language support (Traditional Chinese and English)
-- 數據圖表顯示 / Data visualization with charts
-- 錯誤處理和提示 / Error handling and notifications
+- **即時股票數據**: 獲取最新的股票報價及市場變化。
+- **詳細股票資訊**: 每隻股票都有專屬頁面，顯示其詳細資料，包括歷史表現和技術指標。
+- **搜尋與篩選功能**: 快速查找股票，支持按代碼或名稱篩選。
+- **響應式設計**: 支持桌面及移動設備，流暢使用體驗。
+- **數據可視化**: 內建圖表顯示股票走勢，讓數據一目瞭然。
+- **友好的動畫效果**: 提升用戶互動體驗。
 
----
+### 安裝指南
 
-## 安裝 / Installation
-
-請確保您已安裝 Python 3 和 pip。
-
-1. 克隆這個儲存庫：
+1. **克隆儲存庫**：
 
    ```bash
    git clone https://github.com/oinktech/stock_app.git
    cd stock_app
    ```
 
-2. 安裝依賴：
+2. **安裝依賴**：
+
+   確保你已安裝 Python 3 和 pip，然後運行以下命令：
 
    ```bash
    pip install -r requirements.txt
    ```
 
----
-
-## 使用 / Usage
+### 啟動應用
 
 運行以下命令啟動應用：
 
@@ -65,61 +48,179 @@
 python app.py
 ```
 
-然後在瀏覽器中訪問 `http://127.0.0.1:10000`。
+然後在瀏覽器中訪問 `http://127.0.0.1:10000` 開始使用。
 
-Run the following command to start the application:
+### 使用指南
+
+1. **首頁展示**: 進入應用後，首頁會列出所有股票的最新數據。
+2. **搜尋股票**: 使用搜尋框快速查找特定股票代碼或名稱。
+3. **查看詳情**: 點擊任何股票代碼可進入詳細資訊頁面，查看其歷史表現和最新數據。
+
+### 截圖
+
+![Stocks Page](https://example.com/stocks-page-screenshot.png)
+
+### 數據可視化
+
+使用 Chart.js 库生成的股票走勢圖：
+
+```html
+<canvas id="stockChart" width="400" height="200"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx = document.getElementById('stockChart').getContext('2d');
+    var stockChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+            datasets: [{
+                label: 'Stock Price',
+                data: [65, 59, 80, 81, 56, 55],
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+```
+
+### 動畫效果
+
+本應用具備優雅的 CSS 動畫，提升用戶交互體驗。以下是一個示例動畫：
+
+```css
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+```
+
+將 `.fade-in` 類添加到你的 HTML 元素中，讓它們在進入視窗時淡入顯示。
+
+---
+
+## English
+
+### Introduction
+
+**Stock Helper** is a powerful stock query application built on the Flask framework that provides real-time stock data and analysis. Whether you're a seasoned investor or new to the stock market, this application helps you stay informed about market trends.
+
+### Key Features
+
+- **Real-time Stock Data**: Get the latest stock quotes and market movements.
+- **Detailed Stock Information**: Each stock has a dedicated page displaying comprehensive details, including historical performance and technical indicators.
+- **Search and Filter Functionality**: Quickly find stocks by symbol or name with advanced filtering options.
+- **Responsive Design**: Fully compatible with both desktop and mobile devices for a smooth user experience.
+- **Data Visualization**: Built-in charts show stock trends, making data easy to understand.
+- **Friendly Animations**: Enhance user interaction experience.
+
+### Installation Guide
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/oinktech/stock_app.git
+   cd stock_app
+   ```
+
+2. **Install Dependencies**:
+
+   Ensure you have Python 3 and pip installed, then run:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+### Running the Application
+
+Start the application with the following command:
 
 ```bash
 python app.py
 ```
 
-Then visit `http://127.0.0.1:10000` in your browser.
+Then visit `http://127.0.0.1:10000` in your browser to start using the app.
 
----
+### Usage Guide
 
-## 示範 / Demo
+1. **Homepage Display**: Upon entering the app, the homepage lists all stocks with their latest data.
+2. **Search for Stocks**: Use the search box to quickly find specific stock symbols or names.
+3. **View Details**: Click on any stock symbol to access detailed information, including historical performance and latest data.
 
-### 頁面截圖 / Screenshots
+### Screenshots
 
-![主頁](https://via.placeholder.com/800x400.png?text=主頁+Screenshot)  
-![股票記錄](https://via.placeholder.com/800x400.png?text=股票記錄+Screenshot)
+![Stocks Page](https://example.com/stocks-page-screenshot.png)
 
-### 動畫效果 / Animation Effects
+### Data Visualization
+
+Using Chart.js to generate stock trend charts:
+
+```html
+<canvas id="stockChart" width="400" height="200"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx = document.getElementById('stockChart').getContext('2d');
+    var stockChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+            datasets: [{
+                label: 'Stock Price',
+                data: [65, 59, 80, 81, 56, 55],
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+```
+
+### Animations
+
+The application features elegant CSS animations to enhance user interactions. Below is an example animation:
 
 ```css
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.container {
-  animation: fadeIn 0.5s ease-in-out;
+.fade-in {
+    animation: fadeIn 1s ease-in;
 }
 ```
 
----
-
-## 貢獻 / Contributing
-
-如果您想為此項目做出貢獻，請遵循以下步驟：
-
-1. Fork 此儲存庫
-2. 創建您的特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交您的更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 創建一個新的 Pull Request
+Add the `.fade-in` class to your HTML elements to make them fade in when they enter the viewport.
 
 ---
 
-## 許可證 / License
+## 開發者 (Developer)
 
-此項目使用 MIT 許可證 - 詳見 [LICENSE](LICENSE) 文件。
-
----
-
-### 附加信息 / Additional Information
-
-- **技術棧**: Flask, SQLAlchemy, HTML, CSS, JavaScript
-- **數據來源**: 股票市場 API
-- **支持的瀏覽器**: Chrome, Firefox, Safari
-
+- **OinkTech**: [GitHub](https://github.com/oinktech)
+- **聯繫我們 (Contact Us)**: oinktech2024@gmail.com

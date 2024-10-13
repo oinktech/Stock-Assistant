@@ -63,13 +63,14 @@ def api_stock():
 # 路由：列出所有股票记录
 @app.route('/stocks', methods=['GET'])
 def list_stocks():
-    end_date = datetime.now()
-    start_date = end_date - timedelta(days=365)
+    stock_symbols = request.args.getlist('symbol')  # 获取多个符号的查询参数
+    if not stock_symbols:
+        return render_template('error.html', error='请提供至少一个股票符号。')
+
     endpoint = f'{BASE_URL}/eod'
     params = {
         'access_key': API_KEY_2,
-        'date_from': start_date.strftime('%Y-%m-%d'),
-        'date_to': end_date.strftime('%Y-%m-%d'),
+        'symbols': ','.join(stock_symbols),  # 将符号列表转换为逗号分隔的字符串
         'limit': 100
     }
 

@@ -1,5 +1,5 @@
 # 股票助手 (Stock Helper)
-# 線上體驗版 (Live Demo)[https://oinktech.github.io]
+# [線上體驗版 (Live Demo)](https://oinktech.github.io)
 ![Logo](https://openmoji.org/data/color/svg/1F4B1.svg)
 
 ## 語言選擇 / Language Selection

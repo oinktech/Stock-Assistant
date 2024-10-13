@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>股市助手</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>股市助手</h1>
+        <div>
+            <a href="/stocks">查看所有股票</a>
+            <a href="/stock/AAPL">查詢蘋果股票</a>
+        </div>
+        <div class="language-selector">
+            <a href="/?lang=zh" class="flag"><img src="https://openmoji.org/data/color/svg/1F1F9-1F1FC.svg" alt="中文"/> 繁體中文</a>
+            <a href="/?lang=en" class="flag"><img src="https://openmoji.org/data/color/svg/1F1FA-1F1F8.svg" alt="英文"/> English</a>
+        </div>
+    </div>
+</body>
+</html>

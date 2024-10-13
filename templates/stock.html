@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ symbol }} 股票資料</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ symbol }} 股票資料</h1>
+        <table>
+            <tr>
+                <th>日期</th>
+                <th>開盤價</th>
+                <th>最高價</th>
+                <th>最低價</th>
+                <th>收盤價</th>
+                <th>成交量</th>
+            </tr>
+            {% for record in data %}
+            <tr>
+                <td>{{ record.date }}</td>
+                <td>{{ record.open }}</td>
+                <td>{{ record.high }}</td>
+                <td>{{ record.low }}</td>
+                <td>{{ record.close }}</td>
+                <td>{{ record.volume }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/">返回主頁</a>
+    </div>
+</body>
+</html>

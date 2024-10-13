@@ -1,6 +1,4 @@
-以下是一个更完整和美观的 `README.md` 文件示例，其中包含在最开始选择语言的功能，增强的内容，以及更美化的外观设计。
 
-```markdown
 # 股票助手 (Stock Assistant)
 
 [![Flask](https://img.shields.io/badge/Flask-v2.2.2-blue.svg)](https://flask.palletsprojects.com/)
@@ -125,16 +123,3 @@ Then visit `http://127.0.0.1:10000` in your browser.
 - **數據來源**: 股票市場 API
 - **支持的瀏覽器**: Chrome, Firefox, Safari
 
----
-
-如需更多信息，請參考 [文檔](https://github.com/oinktech/stock_app/wiki) 或聯繫我們。
-```
-
-### 说明
-
-1. **语言选择**：在开头部分提供了繁体中文和英文的国旗图标，用户可以通过点击选择语言。
-2. **内容组织**：使用中英文对照的方式，清晰地呈现各个部分的内容。
-3. **美化外观**：通过使用徽章、国旗图标和分隔线，提升了视觉效果。
-4. **附加信息**：在最后添加了项目的技术栈、数据来源和支持的浏览器信息，增加了 README 的信息量。
-
-您可以根据具体项目的需求和特点进一步调整和补充内容。
